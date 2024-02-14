@@ -2,39 +2,92 @@
 function formatCurrencyToTable(value) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
+function formatCurrencyToTablee(value) {
+  return value.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 4,
+  });
+}
 
-// Percentuais para cada assessor
 const percentuais = {
-  A67292: 0.665, // 66.5%
-  A67311: 0.15, // 15%
-  A20737: 0.04, // 4%
-  A20482: 0.8, // 80%
+  A67292: 60.414,
+  A67311: 14.472,
+  A20737: 6.0,
+  A20482: 4.0,
+  A68558: 3.0,
+  A69285: 1.681,
+  A23064: 1.585,
+  A23446: 1.501,
+  A25698: 1.367,
+  A70916: 1.018,
+  A25637: 0.922,
+  A67280: 0.819,
+  A24174: 0.81,
+  A26237: 0.786,
+  A23832: 0.71,
+  A25723: 0.437,
+  A25697: 0.27,
+  A20997: 0.01,
+  A69793: 0.01,
+  A21756: 0.01,
+  A25041: 0.01,
+  A70408: 0.001,
+  A70751: 0.001,
+  A71522: 0.001,
+  A72391: 0.001,
+  A72759: 0.001,
+  A73596: 0.001,
+  A74588: 0.001,
+  A74970: 0.001,
+  A27394: 0.001,
+  A30309: 0.001,
+  A30003: 0.001,
+  A33644: 0.001,
+  A33363: 0.001,
+  A35185: 0.001,
+  Avand: 0.001,
+  AGuinle: 0.001,
+  A37761: 0.001,
+  A41437: 0.001,
+  AFab: 0.001,
+  AAdao: 0.001,
+  A44413: 0.001,
+  Aigor: 0.001,
 };
+
+console.log(percentuais);
 
 // Função para calcular os valores e mostrar na tela
 function calcularValores() {
   const assessorSelecionado = document.getElementById("assessor").value;
   const percentual = percentuais[assessorSelecionado];
-  const valorInicial = 25000; // Valor fixo para todos os assessores
-  const valorProjecao1 = 30000;
-  const valorProjecao2 = 40000;
+  const valorInicial = 21230366.91; // Valor fixo para todos os assessores
+  const valorProjecao1 = 25000000;
+  const valorProjecao2 = 30000000;
 
   // Calcula os valores com base nos inputs do usuário
-  const valorAtual = valorInicial * percentual;
-  const projecao1 = valorProjecao1 * percentual;
-  const projecao2 = valorProjecao2 * percentual;
+  const valorAtual = valorInicial * (percentual / 100);
+  const projecao1 = valorProjecao1 * (percentual / 100);
+  const projecao2 = valorProjecao2 * (percentual / 100);
 
   // Atualiza o HTML com os resultados
   document.getElementById("resultado").innerHTML = `
-        <p>Seu valor na empresa hoje é: ${formatCurrencyToTable(
-          valorAtual
-        )}.</p>
-        <p>Projeções futuras:</p>
-        <ol>
-            <li>Projeção futura 1: ${formatCurrencyToTable(projecao1)}.</li>
-            <li>Projeção futura 2: ${formatCurrencyToTable(projecao2)}.</li>
-        </ol>
-    `;
+    <p>Participação na empresa: ${formatCurrencyToTablee(percentual)}%.</p>
+    <p>Valor atual da empresa: ${formatCurrencyToTable(valorInicial)}.</p>
+    <p>Valor atual no Partnership: ${formatCurrencyToTable(valorAtual)}.</p>
+    <p>-</p>
+    <p class="font-bold">Exemplo 1:</p> <!-- Adicionando a classe font-bold -->
+    <ol>
+        <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao1)}.</li>
+        <li>Valor no Partnership: ${formatCurrencyToTable(projecao1)}.</li>
+    </ol>
+    <p>-</p>
+    <p class="font-bold">Exemplo 2:</p> <!-- Adicionando a classe font-bold -->
+    <ol>
+        <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao2)}.</li>
+        <li>Valor no Partnership: ${formatCurrencyToTable(projecao2)}.</li>
+    </ol>
+`;
 
   // Exibe os campos adicionais
   document.getElementById("additional-inputs").style.display = "block";
@@ -58,8 +111,15 @@ function calcularProjecao3() {
 
   // Exibe a projeção 3
   document.getElementById("projecao3").innerHTML = `
-          <p>Projeção futura 3: ${formatCurrencyToTable(projecao3)}.</p>
-      `;
+          <p class="font-bold">Exemplo 3:</p> <!-- Adicionando a classe font-bold -->
+          <ol>
+          <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao3)}.</li>
+          <li>Participação na empresa: ${formatCurrencyToTablee(
+            percentualProjecao3 * 100
+          )}%.</li>
+          </ol>
+            <p>Valor no Partnership: ${formatCurrencyToTable(projecao3)}.</p>
+        `;
 }
 
 // Adiciona um event listener para o botão "Mostrar Campos Adicionais"

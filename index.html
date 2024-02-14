@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
-    <title>Empresa</title>
+    <title>Partnership</title>
+    <style>
+      /* Adiciona estilos para ajustar o tamanho do aside */
+      aside {
+        height: 100vh; /* Define a altura do aside para ocupar toda a altura da tela */
+        overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo ultrapassa a altura da tela */
+      }
+    </style>
   </head>
   <body class="bg-gray-200">
     <aside
-      class="bg-cyan-800 rounded-r-lg flex flex-col justify-between py-5 md:flex md:h-screen"
+      class="bg-cyan-800 rounded-r-lg flex flex-col justify-between py-5 text-white"
     >
       <div class="md:ml-4 md:mb-8 text-center">
         <img
@@ -16,21 +23,56 @@
           src="https://petropolisinvestimentos.com.br/wp-content/uploads/2023/09/logo-neg-simple.png.webp"
           alt="Logo"
         />
-        <h2 class="text-xl font-bold text-white">Empresa</h2>
+        <h2 class="text-xl font-bold text-white">Partnership</h2>
       </div>
       <form class="w-full px-5" id="investment-form">
         <div class="flex flex-col my-4 text-white">
-          <label for="assessor" class="font-bold text-gray-800"
-            >Código de assessor(a)</label
-          >
+          <label for="assessor" class="font-bold">Código de assessor(a)</label>
           <select
             id="assessor"
             class="investment-clas w-full rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
           >
+            <option value="A20482">A20482</option>
+            <option value="A20737">A20737</option>
+            <option value="A20997">A20997</option>
+            <option value="A21756">A21756</option>
+            <option value="A23064">A23064</option>
+            <option value="A23446">A23446</option>
+            <option value="A23832">A23832</option>
+            <option value="A24174">A24174</option>
+            <option value="A25041">A25041</option>
+            <option value="A25637">A25637</option>
+            <option value="A25697">A25697</option>
+            <option value="A25698">A25698</option>
+            <option value="A25723">A25723</option>
+            <option value="A26237">A26237</option>
+            <option value="A27394">A27394</option>
+            <option value="A30003">A30003</option>
+            <option value="A30309">A30309</option>
+            <option value="A33363">A33363</option>
+            <option value="A33644">A33644</option>
+            <option value="A35185">A35185</option>
+            <option value="A37761">A37761</option>
+            <option value="A41437">A41437</option>
+            <option value="A44413">A44413</option>
+            <option value="A67280">A67280</option>
             <option value="A67292">A67292</option>
             <option value="A67311">A67311</option>
-            <option value="A20737">A20737</option>
-            <option value="A20482">A20482</option>
+            <option value="A68558">A68558</option>
+            <option value="A69285">A69285</option>
+            <option value="A69793">A69793</option>
+            <option value="A70408">A70408</option>
+            <option value="A70751">A70751</option>
+            <option value="A70916">A70916</option>
+            <option value="A71522">A71522</option>
+            <option value="A72391">A72391</option>
+            <option value="A72759">A72759</option>
+            <option value="A73596">A73596</option>
+            <option value="A74588">A74588</option>
+            <option value="A74970">A74970</option>
+            <option value="AAdao">AAdao</option>
+            <option value="AFab">AFab</option>
+            <option value="AGuinle">AGuinle</option>
           </select>
         </div>
         <div class="flex justify-around my-5 px-8 gap-5">
@@ -38,7 +80,7 @@
             id="mostrar-campos-adicionais"
             class="w-full md:w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
           >
-            Mostrar Campos Adicionais
+            Mostrar
           </button>
           <button
             id="limpar"
@@ -57,7 +99,7 @@
             <label
               for="projecao-amount"
               class="font-bold text-gray-800 text-white"
-              >Insira um valor para a Projeção 3</label
+              >Insira um valor</label
             >
             <div class="flex">
               <input
@@ -80,7 +122,7 @@
             <label
               for="projecao-percent"
               class="font-bold text-gray-800 text-white"
-              >Insira um percentual para a Projeção 3 (%)</label
+              >Insira um percentual (%)</label
             >
             <div class="flex">
               <input
@@ -106,7 +148,7 @@
               id="calcular-projecao"
               class="w-full md:w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
             >
-              Calcular Projeção 3
+              Calcular
             </button>
           </div>
         </form>
