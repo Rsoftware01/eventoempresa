@@ -77,23 +77,27 @@ function calcularValores() {
 
   // Atualiza o HTML com os resultados
   document.getElementById("resultado").innerHTML = `
-    <p>Participação na empresa: ${formatCurrencyToTablee(percentual)}%.</p>
-    <p>Valor atual da empresa: ${formatCurrencyToTable(valorInicial)}.</p>
-    <p>Valor atual no Partnership: ${formatCurrencyToTable(valorAtual)}.</p>
-    <p>-</p>
-    <p class="font-bold">Exemplo 1:</p> <!-- Adicionando a classe font-bold -->
+    <p class="font-bold">Participação na empresa: ${formatCurrencyToTablee(
+      percentual
+    )}%.</p>
+    <p class="bg-cyan-800">-</p>
+    <p class="font-bold">Valor da empresa em Jun/23:</p> <!-- Adicionando a classe font-bold -->
+    <p>Valor da empresa: ${formatCurrencyToTable(valorInicial)}.</p>
+    <p>Valor no Partnership: ${formatCurrencyToTable(valorAtual)}.</p>
+    <p class="bg-cyan-800">-</p>
+    <p class="font-bold">Valor da empresa em Dez/23:</p> <!-- Adicionando a classe font-bold -->
     <ol>
         <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao1)}.</li>
         <li>Valor no Partnership: ${formatCurrencyToTable(projecao1)}.</li>
     </ol>
-    <p>-</p>
-    <p class="font-bold">Exemplo 2:</p> <!-- Adicionando a classe font-bold -->
+    <p class="bg-cyan-800">-</p>
+    <p class="font-bold">Possível valor em Jun/24:</p> <!-- Adicionando a classe font-bold -->
     <ol>
         <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao2)}.</li>
         <li>Valor no Partnership: ${formatCurrencyToTable(projecao2)}.</li>
     </ol>
-    <p>-</p>
-    <p class="font-bold">Simule um outro valor para empresa e percentual que gostaria de ter:</p>
+    <p class="bg-cyan-800">-</p>
+    <p class="font-bold">Simule outros valores (Valor da empresa * Participação na empresa)</p>
 `;
 
   // Exibe os campos adicionais
@@ -118,7 +122,7 @@ function calcularProjecao3() {
 
   // Exibe a projeção 3
   document.getElementById("projecao3").innerHTML = `
-          <p class="font-bold">Exemplo 3:</p> <!-- Adicionando a classe font-bold -->
+          <p class="font-bold">Simulações: </p> <!-- Adicionando a classe font-bold -->
           <ol>
           <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao3)}.</li>
           <li>Participação na empresa: ${formatCurrencyToTablee(
