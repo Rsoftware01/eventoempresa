@@ -59,6 +59,11 @@ console.log(percentuais);
 
 // Função para calcular os valores e mostrar na tela
 function calcularValores() {
+  // Limpa a projeção 3 e os campos de valor e percentual
+  document.getElementById("projecao-amount").value = "";
+  document.getElementById("projecao-percent").value = "";
+  document.getElementById("projecao3").innerHTML = "";
+
   const assessorSelecionado = document.getElementById("assessor").value;
   const percentual = percentuais[assessorSelecionado];
   const valorInicial = 21230366.91; // Valor fixo para todos os assessores
