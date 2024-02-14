@@ -87,6 +87,8 @@ function calcularValores() {
         <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao2)}.</li>
         <li>Valor no Partnership: ${formatCurrencyToTable(projecao2)}.</li>
     </ol>
+    <p>-</p>
+    <p class="font-bold">Simule um outro valor para empresa e percentual que gostaria de ter:</p>
 `;
 
   // Exibe os campos adicionais
