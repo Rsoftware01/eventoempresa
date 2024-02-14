@@ -1,13 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Empresa</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
+  <body class="">
+    <aside
+      class="bg-cyan-800 row-span-2 rounded-r-lg flex flex-col justify-between py-5 md:flex"
+    >
+      <div>
+        <img
+          class="ml-4 mb-8"
+          src="https://petropolisinvestimentos.com.br/wp-content/uploads/2023/09/logo-neg-simple.png.webp"
+          alt=""
+        />
+        <h2 class="text-xl font-bold px-5 sm:text-left text-white ml-20">
+          Empresa
+        </h2>
+      </div>
+      <form class="w-full px-5" id="investment-form">
+        <div class="flex w-full flex-col my-8 text-white">
+          <label
+            for="investment-clas"
+            class="font-bold text-gray-800 text-white"
+          >
+            Carteiras
+          </label>
+          <div class="flex">
+            <select
+              name="investment-clas"
+              class="investment-clas w-9/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
+            >
+              <option value="top10">Carteira Top 10 Ações XP</option>
+              <option value="topDividends">Carteira Top Dividendos XP</option>
+              <option value="fii">Carteira Fundos Imobiliários XP</option>
+              <option value="allClasses">Todas as Carteiras</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex">
+          <label
+            for="investment-clas"
+            class="font-bold text-gray-800 text-white"
+          >
+            Benchmark
+          </label>
+          <div class="flex">
+            <select
+              class="ml-2 investment-clas w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
+            >
+              <option value="ibovespa">Ibovespa</option>
+              <option value="ifix">IFIX</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex">
+          <label
+            for="investment-inicial"
+            class="mt-6 font-bold text-gray-800 text-white"
+          >
+            Data Inicial
+          </label>
+          <div class="flex mt-6">
+            <select
+              id="investment-inicial"
+              class="ml-2 w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
+            >
+              <option value="Jun/18">Jul/18</option>
+              <option value="Jul/18">Jul/18</option>
+              <option value="Ago/18">Ago/18</option>
+              <option value="Set/18">Jul/18</option>
+              <option value="Out/18">Ago/18</option>
+              <option value="Nov/18">Jul/18</option>
+              <option value="Dez/18">Ago/18</option>
+              <option value="Jan/18">Jul/18</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex">
+          <label
+            for="investment-final"
+            class="mt-6 font-bold text-gray-800 text-white"
+          >
+            Data Final
+          </label>
+          <div class="flex mt-6">
+            <select
+              id="investment-final"
+              class="ml-2 w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
+            >
+              <option value="Jun/18">Jul/18</option>
+              <option value="Jul/18">Jul/18</option>
+              <option value="Ago/18">Ago/18</option>
+              <option value="Set/18">Jul/18</option>
+              <option value="Out/18">Ago/18</option>
+              <option value="Nov/18">Jul/18</option>
+              <option value="Dez/18">Ago/18</option>
+              <option value="Jan/18">Jul/18</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-8 flex w-full flex-col my-2 h-[4.25rem]">
+          <label
+            for="starting-amount"
+            class="font-bold text-gray-800 text-white"
+          >
+            Investimento inicial</label
+          >
+          <div class="flex">
+            <input
+              value="R$"
+              class="w-1/12 text-center rounded-l-lg"
+              type="text"
+              disabled
+            />
+            <input
+              type="text"
+              class="w-2/6 rounded-r-lg px-2"
+              placeholder="0.00"
+              id="starting-amount"
+              name="starting-amount"
+              required
+            />
+          </div>
+        </div>
+        <div class="flex w-full flex-col my-2 h-[4.25rem]">
+          <label
+            for="additional-contribution"
+            class="font-bold text-gray-800 text-white"
+          >
+            Aportes adicionais</label
+          >
+          <div class="flex">
+            <input
+              value="R$"
+              class="w-1/12 text-center rounded-l-lg"
+              type="text"
+              disabled
+            />
+            <input
+              type="text"
+              class="w-2/6 rounded-r-lg px-2"
+              placeholder="0.00"
+              id="additional-contribution"
+              name="additional-contribution"
+            />
+          </div>
+        </div>
+      </form>
+      <div class="flex justify-around my-5 px-8 gap-5">
+        <button
+          id="calculate-results"
+          form="investment-form"
+          class="w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
+        >
+          Calcular
+        </button>
+        <button
+          class="w-1/2 rounded-lg font-bold text-slate-200 hover:bg-blue-900"
+          id="clear-form"
+        >
+          Limpar
+        </button>
+      </div>
+    </aside>
+    <main class="row-span-2 col-span-2 relative"></main>
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
