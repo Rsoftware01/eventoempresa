@@ -2,173 +2,117 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
     <title>Empresa</title>
   </head>
-  <body class="">
+  <body class="bg-gray-200">
     <aside
-      class="bg-cyan-800 row-span-2 rounded-r-lg flex flex-col justify-between py-5 md:flex"
+      class="bg-cyan-800 rounded-r-lg flex flex-col justify-between py-5 md:flex md:h-screen"
     >
-      <div>
+      <div class="md:ml-4 md:mb-8 text-center">
         <img
-          class="ml-4 mb-8"
+          class="mx-auto mb-4 w-32"
           src="https://petropolisinvestimentos.com.br/wp-content/uploads/2023/09/logo-neg-simple.png.webp"
-          alt=""
+          alt="Logo"
         />
-        <h2 class="text-xl font-bold px-5 sm:text-left text-white ml-20">
-          Empresa
-        </h2>
+        <h2 class="text-xl font-bold text-white">Empresa</h2>
       </div>
       <form class="w-full px-5" id="investment-form">
-        <div class="flex w-full flex-col my-8 text-white">
-          <label
-            for="investment-clas"
-            class="font-bold text-gray-800 text-white"
+        <div class="flex flex-col my-4 text-white">
+          <label for="assessor" class="font-bold text-gray-800"
+            >Código de assessor(a)</label
           >
-            Carteiras
-          </label>
-          <div class="flex">
-            <select
-              name="investment-clas"
-              class="investment-clas w-9/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
-            >
-              <option value="top10">Carteira Top 10 Ações XP</option>
-              <option value="topDividends">Carteira Top Dividendos XP</option>
-              <option value="fii">Carteira Fundos Imobiliários XP</option>
-              <option value="allClasses">Todas as Carteiras</option>
-            </select>
-          </div>
+          <select
+            id="assessor"
+            class="investment-clas w-full rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
+          >
+            <option value="A67292">A67292</option>
+            <option value="A67311">A67311</option>
+            <option value="A20737">A20737</option>
+            <option value="A20482">A20482</option>
+          </select>
         </div>
-        <div class="flex">
-          <label
-            for="investment-clas"
-            class="font-bold text-gray-800 text-white"
+        <div class="flex justify-around my-5 px-8 gap-5">
+          <button
+            id="mostrar-campos-adicionais"
+            class="w-full md:w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
           >
-            Benchmark
-          </label>
-          <div class="flex">
-            <select
-              class="ml-2 investment-clas w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
-            >
-              <option value="ibovespa">Ibovespa</option>
-              <option value="ifix">IFIX</option>
-            </select>
-          </div>
-        </div>
-        <div class="flex">
-          <label
-            for="investment-inicial"
-            class="mt-6 font-bold text-gray-800 text-white"
+            Mostrar Campos Adicionais
+          </button>
+          <button
+            id="limpar"
+            class="w-full md:w-1/2 rounded-lg font-bold text-slate-200 hover:bg-blue-900"
           >
-            Data Inicial
-          </label>
-          <div class="flex mt-6">
-            <select
-              id="investment-inicial"
-              class="ml-2 w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
-            >
-              <option value="Jun/18">Jul/18</option>
-              <option value="Jul/18">Jul/18</option>
-              <option value="Ago/18">Ago/18</option>
-              <option value="Set/18">Jul/18</option>
-              <option value="Out/18">Ago/18</option>
-              <option value="Nov/18">Jul/18</option>
-              <option value="Dez/18">Ago/18</option>
-              <option value="Jan/18">Jul/18</option>
-            </select>
-          </div>
-        </div>
-        <div class="flex">
-          <label
-            for="investment-final"
-            class="mt-6 font-bold text-gray-800 text-white"
-          >
-            Data Final
-          </label>
-          <div class="flex mt-6">
-            <select
-              id="investment-final"
-              class="ml-2 w-12/12 rounded-r-lg border-l-4 border-s-blue-500 hover:bg-blue-200 hover:text-slate-0 text-black"
-            >
-              <option value="Jun/18">Jul/18</option>
-              <option value="Jul/18">Jul/18</option>
-              <option value="Ago/18">Ago/18</option>
-              <option value="Set/18">Jul/18</option>
-              <option value="Out/18">Ago/18</option>
-              <option value="Nov/18">Jul/18</option>
-              <option value="Dez/18">Ago/18</option>
-              <option value="Jan/18">Jul/18</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="mt-8 flex w-full flex-col my-2 h-[4.25rem]">
-          <label
-            for="starting-amount"
-            class="font-bold text-gray-800 text-white"
-          >
-            Investimento inicial</label
-          >
-          <div class="flex">
-            <input
-              value="R$"
-              class="w-1/12 text-center rounded-l-lg"
-              type="text"
-              disabled
-            />
-            <input
-              type="text"
-              class="w-2/6 rounded-r-lg px-2"
-              placeholder="0.00"
-              id="starting-amount"
-              name="starting-amount"
-              required
-            />
-          </div>
-        </div>
-        <div class="flex w-full flex-col my-2 h-[4.25rem]">
-          <label
-            for="additional-contribution"
-            class="font-bold text-gray-800 text-white"
-          >
-            Aportes adicionais</label
-          >
-          <div class="flex">
-            <input
-              value="R$"
-              class="w-1/12 text-center rounded-l-lg"
-              type="text"
-              disabled
-            />
-            <input
-              type="text"
-              class="w-2/6 rounded-r-lg px-2"
-              placeholder="0.00"
-              id="additional-contribution"
-              name="additional-contribution"
-            />
-          </div>
+            Limpar
+          </button>
         </div>
       </form>
-      <div class="flex justify-around my-5 px-8 gap-5">
-        <button
-          id="calculate-results"
-          form="investment-form"
-          class="w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
-        >
-          Calcular
-        </button>
-        <button
-          class="w-1/2 rounded-lg font-bold text-slate-200 hover:bg-blue-900"
-          id="clear-form"
-        >
-          Limpar
-        </button>
+      <!-- Div para exibir os resultados -->
+      <div id="resultado" class="text-white mx-5"></div>
+      <!-- Div para inserir valores e calcular projeção 3 -->
+      <div id="additional-inputs" style="display: none">
+        <form class="w-full px-5">
+          <div class="flex flex-col my-4">
+            <label
+              for="projecao-amount"
+              class="font-bold text-gray-800 text-white"
+              >Insira um valor para a Projeção 3</label
+            >
+            <div class="flex">
+              <input
+                value="R$"
+                class="w-1/4 text-center rounded-l-lg"
+                type="text"
+                disabled
+              />
+              <input
+                type="text"
+                class="w-full md:w-2/3 rounded-r-lg px-2"
+                placeholder="0.00"
+                id="projecao-amount"
+                name="projecao-amount"
+                required
+              />
+            </div>
+          </div>
+          <div class="flex flex-col my-4">
+            <label
+              for="projecao-percent"
+              class="font-bold text-gray-800 text-white"
+              >Insira um percentual para a Projeção 3 (%)</label
+            >
+            <div class="flex">
+              <input
+                value="%"
+                class="w-1/4 text-center rounded-l-lg"
+                type="text"
+                disabled
+              />
+              <input
+                type="text"
+                class="w-full md:w-2/3 rounded-r-lg px-2"
+                placeholder="0.00"
+                id="projecao-percent"
+                name="projecao-percent"
+                required
+              />
+            </div>
+          </div>
+          <div id="projecao3" class="text-white mx-5"></div>
+          <!-- Aqui está o elemento para exibir a Projeção 3 -->
+          <div class="flex justify-around my-5 px-8 gap-5">
+            <button
+              id="calcular-projecao"
+              class="w-full md:w-1/2 rounded-lg bg-blue-800 font-bold text-slate-200 hover:bg-blue-900"
+            >
+              Calcular Projeção 3
+            </button>
+          </div>
+        </form>
       </div>
     </aside>
-    <main class="row-span-2 col-span-2 relative"></main>
+    <main class="hidden md:block row-span-2 col-span-2 relative"></main>
     <script type="module" src="./main.js"></script>
   </body>
 </html>
