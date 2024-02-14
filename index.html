@@ -11,6 +11,20 @@
         height: 100vh; /* Define a altura do aside para ocupar toda a altura da tela */
         overflow-y: auto; /* Adiciona uma barra de rolagem vertical quando o conteúdo ultrapassa a altura da tela */
       }
+      /* Centraliza o conteúdo na tela em telas grandes */
+      @media (min-width: 768px) {
+        aside {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        form,
+        #resultado,
+        #additional-inputs {
+          max-width: 600px; /* Define uma largura máxima para o conteúdo */
+          width: 100%; /* Garante que o conteúdo se ajuste à largura máxima */
+        }
+      }
     </style>
   </head>
   <body class="bg-gray-200">
@@ -85,14 +99,12 @@
         </div>
       </form>
       <!-- Div para exibir os resultados -->
-      <div id="resultado" class="text-white mx-5"></div>
+      <div id="resultado" class="text-white mx-5 px-5"></div>
       <!-- Div para inserir valores e calcular projeção 3 -->
       <div id="additional-inputs" style="display: none">
         <form class="w-full px-5">
           <div class="flex flex-col my-4">
-            <label
-              for="projecao-amount"
-              class="font-bold text-gray-800 text-white"
+            <label for="projecao-amount" class="font-bold text-white"
               >Valor da empresa</label
             >
             <div class="flex">
@@ -108,14 +120,11 @@
                 placeholder="0.00"
                 id="projecao-amount"
                 name="projecao-amount"
-                required
               />
             </div>
           </div>
           <div class="flex flex-col my-4">
-            <label
-              for="projecao-percent"
-              class="font-bold text-gray-800 text-white"
+            <label for="projecao-percent" class="font-bold text-white"
               >Participação na empresa</label
             >
             <div class="flex">
@@ -131,7 +140,6 @@
                 placeholder="0.00"
                 id="projecao-percent"
                 name="projecao-percent"
-                required
               />
             </div>
           </div>

@@ -106,31 +106,55 @@ function calcularValores() {
 
 // Função para calcular a projeção 3
 function calcularProjecao3() {
-  const valorProjecao3 = parseFloat(
-    document.getElementById("projecao-amount").value.replace(",", ".")
-  );
-  const percentualProjecao3 =
-    parseFloat(
+  // Remove temporariamente o atributo required dos campos
+  document.getElementById("projecao-amount").removeAttribute("required");
+  document.getElementById("projecao-percent").removeAttribute("required");
+
+  // Verifica se os campos estão preenchidos
+  if (
+    document.getElementById("projecao-amount").value.trim() !== "" &&
+    document.getElementById("projecao-percent").value.trim() !== ""
+  ) {
+    // Verifica se os valores inseridos são números
+    const valorProjecao3 = parseFloat(
+      document.getElementById("projecao-amount").value.replace(",", ".")
+    );
+    const percentualProjecao3 = parseFloat(
       document.getElementById("projecao-percent").value.replace(",", ".")
-    ) / 100; // Converte o percentual para decimal
+    );
 
-  // Calcula a projeção 3 com base nos valores inseridos pelo usuário
-  const projecao3 = valorProjecao3 * percentualProjecao3;
+    // Verifica se os valores são números válidos
+    if (!isNaN(valorProjecao3) && !isNaN(percentualProjecao3)) {
+      // Calcula a projeção 3 com base nos valores inseridos pelo usuário
+      const projecao3 = valorProjecao3 * (percentualProjecao3 / 100);
 
-  // Limpa o conteúdo da projeção 3
-  document.getElementById("projecao3").innerHTML = "";
+      // Limpa o conteúdo da projeção 3
+      document.getElementById("projecao3").innerHTML = "";
 
-  // Exibe a projeção 3
-  document.getElementById("projecao3").innerHTML = `
-          <p class="font-bold">Simulações: </p> <!-- Adicionando a classe font-bold -->
-          <ol>
-          <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao3)}.</li>
-          <li>Participação na empresa: ${formatCurrencyToTablee(
-            percentualProjecao3 * 100
-          )}%.</li>
-          </ol>
-            <p>Valor no Partnership: ${formatCurrencyToTable(projecao3)}.</p>
-        `;
+      // Exibe a projeção 3
+      document.getElementById("projecao3").innerHTML = `
+              <p class="font-bold">Simulações: </p> <!-- Adicionando a classe font-bold -->
+              <ol>
+              <li>Valor da empresa: ${formatCurrencyToTable(
+                valorProjecao3
+              )}.</li>
+              <li>Participação na empresa: ${formatCurrencyToTablee(
+                percentualProjecao3
+              )}%.</li>
+              </ol>
+                <p>Valor no Partnership: ${formatCurrencyToTable(
+                  projecao3
+                )}.</p>
+            `;
+    } else {
+      // Exibe uma mensagem de erro se valores não numéricos forem inseridos
+      alert("Por favor, insira apenas números nos campos.");
+    }
+  }
+
+  // Recoloca o atributo required após o cálculo ou se os campos estiverem vazios
+  document.getElementById("projecao-amount").setAttribute("required", true);
+  document.getElementById("projecao-percent").setAttribute("required", true);
 }
 
 // Adiciona um event listener para o botão "Mostrar Campos Adicionais"
