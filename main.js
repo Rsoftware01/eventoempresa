@@ -62,7 +62,10 @@ console.log(percentuais);
 
 // Função para calcular os valores e mostrar na tela
 function calcularValores() {
+  // Mostra a animação de carregamento
+  document.getElementById("loading-animation").style.display = "block";
   // Limpa a projeção 3 e os campos de valor e percentual
+
   document.getElementById("projecao-amount").value = "";
   document.getElementById("projecao-percent").value = "";
   document.getElementById("projecao3").innerHTML = "";
@@ -105,10 +108,17 @@ function calcularValores() {
 
   // Exibe os campos adicionais
   document.getElementById("additional-inputs").style.display = "block";
+  // Use setTimeout para remover a animação após 3 segundos
+  setTimeout(function () {
+    document.getElementById("loading-animation").style.display = "none";
+  }, 1000);
 }
 
 // Função para calcular a projeção 3
 function calcularProjecao3() {
+  // Mostra a animação de carregamento
+  document.getElementById("loading-animation").style.display = "block";
+
   // Remove temporariamente o atributo required dos campos
   document.getElementById("projecao-amount").removeAttribute("required");
   document.getElementById("projecao-percent").removeAttribute("required");
@@ -158,6 +168,11 @@ function calcularProjecao3() {
   // Recoloca o atributo required após o cálculo ou se os campos estiverem vazios
   document.getElementById("projecao-amount").setAttribute("required", true);
   document.getElementById("projecao-percent").setAttribute("required", true);
+
+  // Use setTimeout para remover a animação após 3 segundos
+  setTimeout(function () {
+    document.getElementById("loading-animation").style.display = "none";
+  }, 1000);
 }
 
 // Adiciona um event listener para o botão "Mostrar Campos Adicionais"
