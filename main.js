@@ -138,8 +138,8 @@ function calcularProjecao3() {
     const percentualProjecao3 = parseFloat(
       document
         .getElementById("projecao-percent")
-        .value.replace(/\./g, "")
-        .replace(",", ".")
+        .value.replace(/\./g, ",") // Substitui todos os pontos por vírgulas
+        .replace(",", ".") // Substitui a primeira vírgula por ponto para garantir que seja considerado como separador decimal
     );
 
     // Verifica se os valores são números válidos
