@@ -130,10 +130,16 @@ function calcularProjecao3() {
   ) {
     // Verifica se os valores inseridos são números
     const valorProjecao3 = parseFloat(
-      document.getElementById("projecao-amount").value.replace(",", ".")
+      document
+        .getElementById("projecao-amount")
+        .value.replace(/\./g, "")
+        .replace(",", ".")
     );
     const percentualProjecao3 = parseFloat(
-      document.getElementById("projecao-percent").value.replace(",", ".")
+      document
+        .getElementById("projecao-percent")
+        .value.replace(/\./g, "")
+        .replace(",", ".")
     );
 
     // Verifica se os valores são números válidos
