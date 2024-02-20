@@ -9,6 +9,13 @@ function formatCurrencyToTablee(value) {
   });
 }
 
+function formatCurrencyToTableee(value) {
+  return value.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}
+
 const percentuais = {
   A67292: 60.414,
   A67311: 14.472,
@@ -73,18 +80,22 @@ function calcularValores() {
   const assessorSelecionado = document.getElementById("assessor").value;
   const percentual = percentuais[assessorSelecionado];
   const valorInicial = 21230366.91; // Valor fixo para todos os assessores
-  const valorProjecao1 = 25000000;
-  const valorProjecao2 = 30000000;
+  const valorProjecao1 = 25519361.14;
+  const valorProjecao2 = 29808355.37;
 
   // Calcula os valores com base nos inputs do usuário
   const valorAtual = valorInicial * (percentual / 100);
   const projecao1 = valorProjecao1 * (percentual / 100);
   const projecao2 = valorProjecao2 * (percentual / 100);
+  const projecaoPercent = (valorProjecao2 / valorProjecao1) * 100 - 100;
 
   // Atualiza o HTML com os resultados
   document.getElementById("resultado").innerHTML = `
     <p class="font-bold">Participação na empresa: ${formatCurrencyToTablee(
       percentual
+    )}%.</p>
+    <p class="font-bold">Evolução da empresa de Jun/23 até Dez/23: ${formatCurrencyToTableee(
+      projecaoPercent
     )}%.</p>
     <p class="bg-cyan-800">-</p>
     <p class="font-bold">Valor da empresa em Jun/23:</p> <!-- Adicionando a classe font-bold -->
