@@ -87,7 +87,7 @@ function calcularValores() {
   const valorAtual = valorInicial * (percentual / 100);
   const projecao1 = valorProjecao1 * (percentual / 100);
   const projecao2 = valorProjecao2 * (percentual / 100);
-  const projecaoPercent = (valorProjecao2 / valorProjecao1) * 100 - 100;
+  const projecaoPercent = (valorProjecao1 / valorInicial) * 100 - 100;
 
   // Atualiza o HTML com os resultados
   document.getElementById("resultado").innerHTML = `
@@ -109,7 +109,7 @@ function calcularValores() {
     </ol>
     <p class="bg-cyan-800">-</p>
     <p class="font-bold">Possível valor em Jun/24:</p> <!-- Adicionando a classe font-bold -->
-    <p class="text-xs	text-red-600 font-bold">Objetivos do semestre alcançados</p> <!-- Adicionando a classe font-bold -->
+    <p class="text-xs	text-slate-950 font-bold">Atingindo as metas do semestre - cresc. 11,12%</p> <!-- Adicionando a classe font-bold -->
     <ol>
         <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao2)}.</li>
         <li>Valor no Partnership: ${formatCurrencyToTable(projecao2)}.</li>
