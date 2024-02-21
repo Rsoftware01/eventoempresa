@@ -79,9 +79,9 @@ function calcularValores() {
 
   const assessorSelecionado = document.getElementById("assessor").value;
   const percentual = percentuais[assessorSelecionado];
-  const valorInicial = 21230366.91; // Valor fixo para todos os assessores
-  const valorProjecao1 = 25519361.14;
-  const valorProjecao2 = 29808355.37;
+  const valorInicial = 25824701.45; // Valor fixo para todos os assessores
+  const valorProjecao1 = 27580080.69;
+  const valorProjecao2 = 30648234.16;
 
   // Calcula os valores com base nos inputs do usuário
   const valorAtual = valorInicial * (percentual / 100);
