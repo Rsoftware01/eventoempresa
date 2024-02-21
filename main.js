@@ -109,6 +109,7 @@ function calcularValores() {
     </ol>
     <p class="bg-cyan-800">-</p>
     <p class="font-bold">Possível valor em Jun/24:</p> <!-- Adicionando a classe font-bold -->
+    <p class="text-xs	text-red-600 font-bold">Objetivos do semestre alcançados</p> <!-- Adicionando a classe font-bold -->
     <ol>
         <li>Valor da empresa: ${formatCurrencyToTable(valorProjecao2)}.</li>
         <li>Valor no Partnership: ${formatCurrencyToTable(projecao2)}.</li>
